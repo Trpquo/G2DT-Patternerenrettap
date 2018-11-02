@@ -38,11 +38,11 @@ function spremiStari() {
     .data('grid', gridDesc());
     var potpis = $('<figcaption></figcaption>');
     potpis.css({ 'background-color': fillColor }).html(tipRešetke + ' ' + $('#širinaFormata').val() + ' x ' + $('#visinaFormata').val());
-    figure.append(stari).append(potpis).on('click', učitajStari);
+    figure.append(stari).append(potpis).on('click', ucitajStari);
     spremnik.prepend(figure);
 }
 ;
-function učitajStari() {
+function ucitajStari() {
     var data = $(this).data('grid').split('/');
     //console.log(data);
 
@@ -62,7 +62,7 @@ function učitajStari() {
     $('#duljinaStranice, #duljinatorStranice').val(Number(data[6]));
     $('#razmakPodjela, #razmakatorPodjela').val(Number(data[7]));
     
-    obojiŠtoTreba(data[3], data[2]);
+    obojiStoTreba(data[3], data[2]);
     iscrtajGlavni($('#glavniCanvas'), $('#glavniCanvas').get(0).getContext('2d'), dajRačunVrijednosti(false));
 };
 //function dajProvjeriJelCijeli(x, w, jel) {
@@ -86,11 +86,11 @@ function colorPicker(source, context, output) {
                 pixel = imageData.data,
                 pixelColor = "rgba(" + pixel[0] + ", " + pixel[1] + ", " + pixel[2] + ", " + pixel[3] + ")",
                 invertPixelColor = "rgb(" + (255 - pixel[0]) + ", " + (255 - pixel[1]) + ", " + (255 - pixel[2]) + ")";
-        obojiŠtoTreba(pixelColor, invertPixelColor, output);
+        obojiStoTreba(pixelColor, invertPixelColor, output);
     });
 }
 ;
-function obojiŠtoTreba(fl, st, output) {
+function obojiStoTreba(fl, st, output) {
     var zaObojati = $('html, #kontrole, #kontrole input, #kontrole select, #kontrole button, #kontrole fieldset, #podnožje');
     zaObojati.css({ 'background-color': fl, 'color': st });
     if (output) { output.css({ 'background-color': fl, 'color': st }); } //else { console.log('ništo više', output); }

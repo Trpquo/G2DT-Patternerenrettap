@@ -180,7 +180,7 @@ $(document).ready(function () {
                     bojatori[0].val(hex);
                 }
             }
-            obojiŠtoTreba(bojatori[1].val(), bojatori[0].val());
+            obojiStoTreba(bojatori[1].val(), bojatori[0].val());
         });
     }
 
