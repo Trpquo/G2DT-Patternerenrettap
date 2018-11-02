@@ -9,11 +9,8 @@ $(document).ready(function () {
     logoCont.globalCompositeOperation = 'source-in';
     logoCont.fillStyle = strokeColor;
     logoCont.fillRect(0, 0, 700, 100);
-    
+
     $('#logo').hide();
-    $('#kontrole').append(logoCanvas);
-
-
-    
+    $('#kontrole').append(logoImage);
 });
 
